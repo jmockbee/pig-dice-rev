@@ -51,12 +51,21 @@ document.querySelector('.btn-roll').addEventListener('click',function() {
 document.querySelector ('.btn-hold').addEventListener('click',function() {
 
 // add Current score to Global score
-score [activePlayer] += roundScore;
+scores[activePlayer] += roundScore;
 //update UI 
 document.querySelector ('#score-' + activePlayer).textContent = scores [activePlayer];
 //check if player won the game  
- //next
- nextPlayer();
+ 
+        if (scores[activePlayer] >= 20) { document.querySelector('#name-' + activePlayer).textContent = 'Winner';
+    
+    } else {
+
+        nextPlayer();
+
+    }
+    
+
+ 
 
 });
 
